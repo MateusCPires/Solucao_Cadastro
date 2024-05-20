@@ -17,15 +17,18 @@ namespace Cadastro
             InitializeComponent();
         }
 
-        private void btn_Cadastro_Click(object sender, EventArgs e)
+
+        private void btnCadastro_Click(object sender, EventArgs e)
         {
             frmForm objForm = new frmForm();
+            objForm.MdiParent = this;
             objForm.Show();
         }
 
-        private void btn_Consulta_Click(object sender, EventArgs e)
+        private void btnConsulta_Click(object sender, EventArgs e)
         {
             frmConsultaPessoa objConsultaPessoa = new frmConsultaPessoa();
+            objConsultaPessoa.MdiParent = this;
             objConsultaPessoa.Show();
         }
     }

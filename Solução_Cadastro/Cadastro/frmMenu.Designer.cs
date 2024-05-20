@@ -41,8 +41,8 @@ namespace Cadastro
             this.colarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ajudaToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.btn_Cadastro = new System.Windows.Forms.Button();
-            this.btn_Consulta = new System.Windows.Forms.Button();
+            this.btnCadastro = new System.Windows.Forms.ToolStripButton();
+            this.btnConsulta = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +59,9 @@ namespace Cadastro
             this.copiarToolStripButton,
             this.colarToolStripButton,
             this.toolStripSeparator1,
-            this.ajudaToolStripButton});
+            this.ajudaToolStripButton,
+            this.btnCadastro,
+            this.btnConsulta});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 33);
@@ -148,43 +150,37 @@ namespace Cadastro
             this.ajudaToolStripButton.Size = new System.Drawing.Size(34, 28);
             this.ajudaToolStripButton.Text = "&Ajuda";
             // 
-            // btn_Cadastro
+            // btnCadastro
             // 
-            this.btn_Cadastro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_Cadastro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cadastro.Location = new System.Drawing.Point(140, 132);
-            this.btn_Cadastro.Name = "btn_Cadastro";
-            this.btn_Cadastro.Size = new System.Drawing.Size(148, 132);
-            this.btn_Cadastro.TabIndex = 1;
-            this.btn_Cadastro.Text = "Cadastro de Pessoas";
-            this.btn_Cadastro.UseVisualStyleBackColor = true;
-            this.btn_Cadastro.Click += new System.EventHandler(this.btn_Cadastro_Click);
+            this.btnCadastro.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCadastro.Image = global::Cadastro.Properties.Resources.form;
+            this.btnCadastro.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCadastro.Name = "btnCadastro";
+            this.btnCadastro.Size = new System.Drawing.Size(34, 28);
+            this.btnCadastro.Text = "Cadastro de Pessoas";
+            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
-            // btn_Consulta
+            // btnConsulta
             // 
-            this.btn_Consulta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Consulta.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Consulta.Location = new System.Drawing.Point(535, 132);
-            this.btn_Consulta.Name = "btn_Consulta";
-            this.btn_Consulta.Size = new System.Drawing.Size(148, 132);
-            this.btn_Consulta.TabIndex = 2;
-            this.btn_Consulta.Text = "Consulta de Pessoas";
-            this.btn_Consulta.UseVisualStyleBackColor = true;
-            this.btn_Consulta.Click += new System.EventHandler(this.btn_Consulta_Click);
+            this.btnConsulta.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnConsulta.Image = global::Cadastro.Properties.Resources.table;
+            this.btnConsulta.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(34, 28);
+            this.btnConsulta.Text = "Consulta de Pessoas";
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_Consulta);
-            this.Controls.Add(this.btn_Cadastro);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IsMdiContainer = true;
             this.Name = "frmMenu";
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -205,7 +201,7 @@ namespace Cadastro
         private System.Windows.Forms.ToolStripButton colarToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton ajudaToolStripButton;
-        private System.Windows.Forms.Button btn_Cadastro;
-        private System.Windows.Forms.Button btn_Consulta;
+        private System.Windows.Forms.ToolStripButton btnCadastro;
+        private System.Windows.Forms.ToolStripButton btnConsulta;
     }
 }
