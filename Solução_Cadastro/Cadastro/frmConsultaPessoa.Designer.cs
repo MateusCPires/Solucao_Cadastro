@@ -30,7 +30,6 @@ namespace Cadastro
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
             this.table_pessoa_ds2 = new System.Windows.Forms.DataGridView();
             this.idPESSOADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,25 +41,18 @@ namespace Cadastro
             this.dataSet1 = new Cadastro.DataSet1();
             this.pessoa_dsTableAdapter = new Cadastro.DataSet1TableAdapters.Pessoa_dsTableAdapter();
             this.tableAdapterManager = new Cadastro.DataSet1TableAdapters.TableAdapterManager();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbProcurar = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmbColuna = new System.Windows.Forms.ComboBox();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.table_pessoa_ds2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoa_dsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(708, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 33);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Filtrar";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // table_pessoa_ds2
             // 
@@ -74,11 +66,12 @@ namespace Cadastro
             this.emailDataGridViewTextBoxColumn,
             this.datanascimentoDataGridViewTextBoxColumn});
             this.table_pessoa_ds2.DataSource = this.pessoa_dsBindingSource;
-            this.table_pessoa_ds2.Location = new System.Drawing.Point(12, 159);
+            this.table_pessoa_ds2.Location = new System.Drawing.Point(8, 103);
+            this.table_pessoa_ds2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.table_pessoa_ds2.Name = "table_pessoa_ds2";
             this.table_pessoa_ds2.RowHeadersWidth = 62;
             this.table_pessoa_ds2.RowTemplate.Height = 28;
-            this.table_pessoa_ds2.Size = new System.Drawing.Size(776, 243);
+            this.table_pessoa_ds2.Size = new System.Drawing.Size(964, 158);
             this.table_pessoa_ds2.TabIndex = 2;
             // 
             // idPESSOADataGridViewTextBoxColumn
@@ -150,25 +143,29 @@ namespace Cadastro
             this.tableAdapterManager.Pessoa_dsTableAdapter = this.pessoa_dsTableAdapter;
             this.tableAdapterManager.UpdateOrder = Cadastro.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // comboBox1
+            // cmbProcurar
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Igual",
-            "Contém"});
-            this.comboBox1.Location = new System.Drawing.Point(144, 64);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 3;
+            this.cmbProcurar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProcurar.FormattingEnabled = true;
+            this.cmbProcurar.Items.AddRange(new object[] {
+            "Contém",
+            "Igual a",
+            "Começa com",
+            "Termina com"});
+            this.cmbProcurar.Location = new System.Drawing.Point(96, 42);
+            this.cmbProcurar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbProcurar.Name = "cmbProcurar";
+            this.cmbProcurar.Size = new System.Drawing.Size(82, 21);
+            this.cmbProcurar.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F);
-            this.label1.Location = new System.Drawing.Point(282, 34);
+            this.label1.Location = new System.Drawing.Point(188, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 27);
+            this.label1.Size = new System.Drawing.Size(37, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "Por:";
             // 
@@ -176,9 +173,10 @@ namespace Cadastro
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F);
-            this.label2.Location = new System.Drawing.Point(12, 34);
+            this.label2.Location = new System.Drawing.Point(11, 22);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 27);
+            this.label2.Size = new System.Drawing.Size(57, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "Coluna";
             // 
@@ -186,47 +184,74 @@ namespace Cadastro
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F);
-            this.label3.Location = new System.Drawing.Point(139, 34);
+            this.label3.Location = new System.Drawing.Point(93, 22);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 27);
+            this.label3.Size = new System.Drawing.Size(68, 18);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Pelo";
+            this.label3.Text = "Procurar";
             // 
-            // comboBox2
+            // cmbColuna
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbColuna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbColuna.FormattingEnabled = true;
+            this.cmbColuna.Items.AddRange(new object[] {
             "ID",
             "Nome",
-            "Endereço",
             "Cidade",
-            "E-mail"});
-            this.comboBox2.Location = new System.Drawing.Point(17, 64);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 28);
-            this.comboBox2.TabIndex = 7;
+            "Email",
+            "Data Nascimento"});
+            this.cmbColuna.Location = new System.Drawing.Point(11, 42);
+            this.cmbColuna.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbColuna.Name = "cmbColuna";
+            this.cmbColuna.Size = new System.Drawing.Size(82, 21);
+            this.cmbColuna.TabIndex = 7;
+            this.cmbColuna.SelectedIndexChanged += new System.EventHandler(this.cmbColuna_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtPesquisa
             // 
-            this.textBox1.Location = new System.Drawing.Point(287, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 26);
-            this.textBox1.TabIndex = 8;
+            this.txtPesquisa.Location = new System.Drawing.Point(191, 42);
+            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(306, 20);
+            this.txtPesquisa.TabIndex = 8;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(542, 43);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(158, 20);
+            this.textBox2.TabIndex = 9;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Font = new System.Drawing.Font("Arial", 12F);
+            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltrar.Location = new System.Drawing.Point(800, 37);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(176, 26);
+            this.btnFiltrar.TabIndex = 1;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // frmConsultaPessoa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
+            this.ClientSize = new System.Drawing.Size(987, 292);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPesquisa);
+            this.Controls.Add(this.cmbColuna);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbProcurar);
             this.Controls.Add(this.table_pessoa_ds2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFiltrar);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmConsultaPessoa";
             this.Text = "ConsultaPessoa";
             this.Load += new System.EventHandler(this.ConsultaPessoa_Load);
@@ -239,7 +264,7 @@ namespace Cadastro
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.DataGridView table_pessoa_ds2;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource pessoa_dsBindingSource;
@@ -251,11 +276,12 @@ namespace Cadastro
         private System.Windows.Forms.DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datanascimentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbProcurar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmbColuna;
+        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
