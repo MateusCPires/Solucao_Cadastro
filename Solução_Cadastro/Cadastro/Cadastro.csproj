@@ -49,11 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmConsultaPessoa.cs">
+    <Compile Include="DataSetRoupa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRoupa.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaRoupa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaPessoa.Designer.cs">
-      <DependentUpon>frmConsultaPessoa.cs</DependentUpon>
+    <Compile Include="frmConsultaRoupa.Designer.cs">
+      <DependentUpon>frmConsultaRoupa.cs</DependentUpon>
     </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -74,8 +79,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmConsultaPessoa.resx">
-      <DependentUpon>frmConsultaPessoa.cs</DependentUpon>
+    <EmbeddedResource Include="frmConsultaRoupa.resx">
+      <DependentUpon>frmConsultaRoupa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmForm.resx">
       <DependentUpon>frmForm.cs</DependentUpon>
@@ -103,6 +108,17 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRoupa.xsc">
+      <DependentUpon>DataSetRoupa.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRoupa.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRoupa.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetRoupa.xss">
+      <DependentUpon>DataSetRoupa.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
