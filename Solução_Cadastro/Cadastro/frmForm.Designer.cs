@@ -30,18 +30,23 @@ namespace Cadastro
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label lbl_id_PESSOA;
-            System.Windows.Forms.Label lbl_nome;
-            System.Windows.Forms.Label lbl_endereço;
-            System.Windows.Forms.Label lbl_cidade;
-            System.Windows.Forms.Label lbl_email;
-            System.Windows.Forms.Label lbl_data_nascimento;
+            System.Windows.Forms.Label idLabel;
+            System.Windows.Forms.Label nomeLabel;
+            System.Windows.Forms.Label marcaLabel;
+            System.Windows.Forms.Label tamanhoLabel;
+            System.Windows.Forms.Label corLabel;
+            System.Windows.Forms.Label materialLabel;
+            System.Windows.Forms.Label preçoLabel;
+            System.Windows.Forms.Label data_LançamentoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmForm));
-            this.pessoa_dsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.dataSetRoupa = new Cadastro.DataSetRoupa();
+            this.roupasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roupasTableAdapter = new Cadastro.DataSetRoupaTableAdapters.RoupasTableAdapter();
+            this.tableAdapterManager = new Cadastro.DataSetRoupaTableAdapters.TableAdapterManager();
+            this.roupasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.pessoa_dsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new Cadastro.DataSet1();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -50,110 +55,147 @@ namespace Cadastro
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.pessoa_dsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.txt_id_PESSOA = new System.Windows.Forms.TextBox();
-            this.txt_nome = new System.Windows.Forms.TextBox();
-            this.txt_endereço = new System.Windows.Forms.TextBox();
-            this.txt_cidade = new System.Windows.Forms.TextBox();
-            this.txt_email = new System.Windows.Forms.TextBox();
-            this.txt_data_nascimento = new System.Windows.Forms.DateTimePicker();
-            this.table_pessoa_ds = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pessoa_dsTableAdapter = new Cadastro.DataSet1TableAdapters.Pessoa_dsTableAdapter();
-            this.tableAdapterManager = new Cadastro.DataSet1TableAdapters.TableAdapterManager();
-            lbl_id_PESSOA = new System.Windows.Forms.Label();
-            lbl_nome = new System.Windows.Forms.Label();
-            lbl_endereço = new System.Windows.Forms.Label();
-            lbl_cidade = new System.Windows.Forms.Label();
-            lbl_email = new System.Windows.Forms.Label();
-            lbl_data_nascimento = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoa_dsBindingNavigator)).BeginInit();
-            this.pessoa_dsBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoa_dsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table_pessoa_ds)).BeginInit();
+            this.roupasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tamanhoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.corDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preçoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataLançamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.marcaTextBox = new System.Windows.Forms.TextBox();
+            this.tamanhoTextBox = new System.Windows.Forms.TextBox();
+            this.corTextBox = new System.Windows.Forms.TextBox();
+            this.materialTextBox = new System.Windows.Forms.TextBox();
+            this.preçoTextBox = new System.Windows.Forms.TextBox();
+            this.data_LançamentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            idLabel = new System.Windows.Forms.Label();
+            nomeLabel = new System.Windows.Forms.Label();
+            marcaLabel = new System.Windows.Forms.Label();
+            tamanhoLabel = new System.Windows.Forms.Label();
+            corLabel = new System.Windows.Forms.Label();
+            materialLabel = new System.Windows.Forms.Label();
+            preçoLabel = new System.Windows.Forms.Label();
+            data_LançamentoLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRoupa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roupasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roupasBindingNavigator)).BeginInit();
+            this.roupasBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbl_id_PESSOA
+            // idLabel
             // 
-            lbl_id_PESSOA.AutoSize = true;
-            lbl_id_PESSOA.Font = new System.Drawing.Font("Arial", 9F);
-            lbl_id_PESSOA.Location = new System.Drawing.Point(14, 53);
-            lbl_id_PESSOA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lbl_id_PESSOA.Name = "lbl_id_PESSOA";
-            lbl_id_PESSOA.Size = new System.Drawing.Size(68, 15);
-            lbl_id_PESSOA.TabIndex = 1;
-            lbl_id_PESSOA.Text = "ID Pessoa:";
+            idLabel.AutoSize = true;
+            idLabel.Font = new System.Drawing.Font("Arial", 12F);
+            idLabel.Location = new System.Drawing.Point(12, 60);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(38, 27);
+            idLabel.TabIndex = 2;
+            idLabel.Text = "id:";
             // 
-            // lbl_nome
+            // nomeLabel
             // 
-            lbl_nome.AutoSize = true;
-            lbl_nome.Font = new System.Drawing.Font("Arial", 9F);
-            lbl_nome.Location = new System.Drawing.Point(14, 74);
-            lbl_nome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lbl_nome.Name = "lbl_nome";
-            lbl_nome.Size = new System.Drawing.Size(44, 15);
-            lbl_nome.TabIndex = 3;
-            lbl_nome.Text = "Nome:";
+            nomeLabel.AutoSize = true;
+            nomeLabel.Font = new System.Drawing.Font("Arial", 12F);
+            nomeLabel.Location = new System.Drawing.Point(12, 92);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(82, 27);
+            nomeLabel.TabIndex = 4;
+            nomeLabel.Text = "Nome:";
             // 
-            // lbl_endereço
+            // marcaLabel
             // 
-            lbl_endereço.AutoSize = true;
-            lbl_endereço.Font = new System.Drawing.Font("Arial", 9F);
-            lbl_endereço.Location = new System.Drawing.Point(14, 95);
-            lbl_endereço.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lbl_endereço.Name = "lbl_endereço";
-            lbl_endereço.Size = new System.Drawing.Size(63, 15);
-            lbl_endereço.TabIndex = 5;
-            lbl_endereço.Text = "Endereço:";
+            marcaLabel.AutoSize = true;
+            marcaLabel.Font = new System.Drawing.Font("Arial", 12F);
+            marcaLabel.Location = new System.Drawing.Point(12, 124);
+            marcaLabel.Name = "marcaLabel";
+            marcaLabel.Size = new System.Drawing.Size(84, 27);
+            marcaLabel.TabIndex = 6;
+            marcaLabel.Text = "Marca:";
             // 
-            // lbl_cidade
+            // tamanhoLabel
             // 
-            lbl_cidade.AutoSize = true;
-            lbl_cidade.Font = new System.Drawing.Font("Arial", 9F);
-            lbl_cidade.Location = new System.Drawing.Point(14, 116);
-            lbl_cidade.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lbl_cidade.Name = "lbl_cidade";
-            lbl_cidade.Size = new System.Drawing.Size(50, 15);
-            lbl_cidade.TabIndex = 7;
-            lbl_cidade.Text = "Cidade:";
+            tamanhoLabel.AutoSize = true;
+            tamanhoLabel.Font = new System.Drawing.Font("Arial", 12F);
+            tamanhoLabel.Location = new System.Drawing.Point(12, 156);
+            tamanhoLabel.Name = "tamanhoLabel";
+            tamanhoLabel.Size = new System.Drawing.Size(117, 27);
+            tamanhoLabel.TabIndex = 8;
+            tamanhoLabel.Text = "Tamanho:";
             // 
-            // lbl_email
+            // corLabel
             // 
-            lbl_email.AutoSize = true;
-            lbl_email.Font = new System.Drawing.Font("Arial", 9F);
-            lbl_email.Location = new System.Drawing.Point(14, 136);
-            lbl_email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lbl_email.Name = "lbl_email";
-            lbl_email.Size = new System.Drawing.Size(42, 15);
-            lbl_email.TabIndex = 9;
-            lbl_email.Text = "Email:";
+            corLabel.AutoSize = true;
+            corLabel.Font = new System.Drawing.Font("Arial", 12F);
+            corLabel.Location = new System.Drawing.Point(12, 188);
+            corLabel.Name = "corLabel";
+            corLabel.Size = new System.Drawing.Size(57, 27);
+            corLabel.TabIndex = 10;
+            corLabel.Text = "Cor:";
             // 
-            // lbl_data_nascimento
+            // materialLabel
             // 
-            lbl_data_nascimento.AutoSize = true;
-            lbl_data_nascimento.Font = new System.Drawing.Font("Arial", 9F);
-            lbl_data_nascimento.Location = new System.Drawing.Point(14, 158);
-            lbl_data_nascimento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lbl_data_nascimento.Name = "lbl_data_nascimento";
-            lbl_data_nascimento.Size = new System.Drawing.Size(123, 15);
-            lbl_data_nascimento.TabIndex = 11;
-            lbl_data_nascimento.Text = "Data de Nascimento:";
+            materialLabel.AutoSize = true;
+            materialLabel.Font = new System.Drawing.Font("Arial", 12F);
+            materialLabel.Location = new System.Drawing.Point(12, 220);
+            materialLabel.Name = "materialLabel";
+            materialLabel.Size = new System.Drawing.Size(103, 27);
+            materialLabel.TabIndex = 12;
+            materialLabel.Text = "Material:";
             // 
-            // pessoa_dsBindingNavigator
+            // preçoLabel
             // 
-            this.pessoa_dsBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.pessoa_dsBindingNavigator.BindingSource = this.pessoa_dsBindingSource;
-            this.pessoa_dsBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.pessoa_dsBindingNavigator.DeleteItem = null;
-            this.pessoa_dsBindingNavigator.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.pessoa_dsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            preçoLabel.AutoSize = true;
+            preçoLabel.Font = new System.Drawing.Font("Arial", 12F);
+            preçoLabel.Location = new System.Drawing.Point(12, 252);
+            preçoLabel.Name = "preçoLabel";
+            preçoLabel.Size = new System.Drawing.Size(81, 27);
+            preçoLabel.TabIndex = 14;
+            preçoLabel.Text = "Preço:";
+            // 
+            // data_LançamentoLabel
+            // 
+            data_LançamentoLabel.AutoSize = true;
+            data_LançamentoLabel.Font = new System.Drawing.Font("Arial", 12F);
+            data_LançamentoLabel.Location = new System.Drawing.Point(12, 285);
+            data_LançamentoLabel.Name = "data_LançamentoLabel";
+            data_LançamentoLabel.Size = new System.Drawing.Size(208, 27);
+            data_LançamentoLabel.TabIndex = 16;
+            data_LançamentoLabel.Text = "Data Lançamento:";
+            // 
+            // dataSetRoupa
+            // 
+            this.dataSetRoupa.DataSetName = "DataSetRoupa";
+            this.dataSetRoupa.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // roupasBindingSource
+            // 
+            this.roupasBindingSource.DataMember = "Roupas";
+            this.roupasBindingSource.DataSource = this.dataSetRoupa;
+            // 
+            // roupasTableAdapter
+            // 
+            this.roupasTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.RoupasTableAdapter = this.roupasTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Cadastro.DataSetRoupaTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // roupasBindingNavigator
+            // 
+            this.roupasBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.roupasBindingNavigator.BindingSource = this.roupasBindingSource;
+            this.roupasBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.roupasBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.roupasBindingNavigator.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.roupasBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -165,17 +207,17 @@ namespace Cadastro
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.pessoa_dsBindingNavigatorSaveItem});
-            this.pessoa_dsBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.pessoa_dsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.pessoa_dsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.pessoa_dsBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.pessoa_dsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.pessoa_dsBindingNavigator.Name = "pessoa_dsBindingNavigator";
-            this.pessoa_dsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.pessoa_dsBindingNavigator.Size = new System.Drawing.Size(991, 31);
-            this.pessoa_dsBindingNavigator.TabIndex = 0;
-            this.pessoa_dsBindingNavigator.Text = "bindingNavigator1";
+            this.roupasBindingNavigatorSaveItem});
+            this.roupasBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.roupasBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.roupasBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.roupasBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.roupasBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.roupasBindingNavigator.Name = "roupasBindingNavigator";
+            this.roupasBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.roupasBindingNavigator.Size = new System.Drawing.Size(1308, 33);
+            this.roupasBindingNavigator.TabIndex = 0;
+            this.roupasBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -183,26 +225,24 @@ namespace Cadastro
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // pessoa_dsBindingSource
-            // 
-            this.pessoa_dsBindingSource.DataMember = "Pessoa_ds";
-            this.pessoa_dsBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(57, 28);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -210,7 +250,7 @@ namespace Cadastro
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
             // 
             // bindingNavigatorMovePreviousItem
@@ -219,28 +259,27 @@ namespace Cadastro
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posição";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(35, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 31);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -248,7 +287,7 @@ namespace Cadastro
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
             // 
             // bindingNavigatorMoveLastItem
@@ -257,196 +296,214 @@ namespace Cadastro
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
-            // bindingNavigatorDeleteItem
+            // roupasBindingNavigatorSaveItem
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorDeleteItem.Text = "Excluir";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            this.roupasBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.roupasBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("roupasBindingNavigatorSaveItem.Image")));
+            this.roupasBindingNavigatorSaveItem.Name = "roupasBindingNavigatorSaveItem";
+            this.roupasBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 28);
+            this.roupasBindingNavigatorSaveItem.Text = "Salvar Dados";
+            this.roupasBindingNavigatorSaveItem.Click += new System.EventHandler(this.roupasBindingNavigatorSaveItem_Click);
             // 
-            // pessoa_dsBindingNavigatorSaveItem
+            // dataGridView1
             // 
-            this.pessoa_dsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pessoa_dsBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("pessoa_dsBindingNavigatorSaveItem.Image")));
-            this.pessoa_dsBindingNavigatorSaveItem.Name = "pessoa_dsBindingNavigatorSaveItem";
-            this.pessoa_dsBindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
-            this.pessoa_dsBindingNavigatorSaveItem.Text = "Salvar Dados";
-            this.pessoa_dsBindingNavigatorSaveItem.Click += new System.EventHandler(this.pessoa_dsBindingNavigatorSaveItem_Click_1);
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.marcaDataGridViewTextBoxColumn,
+            this.tamanhoDataGridViewTextBoxColumn,
+            this.corDataGridViewTextBoxColumn,
+            this.materialDataGridViewTextBoxColumn,
+            this.preçoDataGridViewTextBoxColumn,
+            this.dataLançamentoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.roupasBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 318);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(1276, 292);
+            this.dataGridView1.TabIndex = 1;
             // 
-            // txt_id_PESSOA
+            // idDataGridViewTextBoxColumn
             // 
-            this.txt_id_PESSOA.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoa_dsBindingSource, "id_PESSOA", true));
-            this.txt_id_PESSOA.Location = new System.Drawing.Point(149, 51);
-            this.txt_id_PESSOA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_id_PESSOA.Name = "txt_id_PESSOA";
-            this.txt_id_PESSOA.Size = new System.Drawing.Size(135, 20);
-            this.txt_id_PESSOA.TabIndex = 2;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 150;
             // 
-            // txt_nome
+            // nomeDataGridViewTextBoxColumn
             // 
-            this.txt_nome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoa_dsBindingSource, "nome", true));
-            this.txt_nome.Location = new System.Drawing.Point(149, 72);
-            this.txt_nome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(135, 20);
-            this.txt_nome.TabIndex = 4;
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.Width = 150;
             // 
-            // txt_endereço
+            // marcaDataGridViewTextBoxColumn
             // 
-            this.txt_endereço.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoa_dsBindingSource, "endereço", true));
-            this.txt_endereço.Location = new System.Drawing.Point(149, 93);
-            this.txt_endereço.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_endereço.Name = "txt_endereço";
-            this.txt_endereço.Size = new System.Drawing.Size(135, 20);
-            this.txt_endereço.TabIndex = 6;
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            this.marcaDataGridViewTextBoxColumn.Width = 150;
             // 
-            // txt_cidade
+            // tamanhoDataGridViewTextBoxColumn
             // 
-            this.txt_cidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoa_dsBindingSource, "cidade", true));
-            this.txt_cidade.Location = new System.Drawing.Point(149, 114);
-            this.txt_cidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_cidade.Name = "txt_cidade";
-            this.txt_cidade.Size = new System.Drawing.Size(135, 20);
-            this.txt_cidade.TabIndex = 8;
+            this.tamanhoDataGridViewTextBoxColumn.DataPropertyName = "Tamanho";
+            this.tamanhoDataGridViewTextBoxColumn.HeaderText = "Tamanho";
+            this.tamanhoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tamanhoDataGridViewTextBoxColumn.Name = "tamanhoDataGridViewTextBoxColumn";
+            this.tamanhoDataGridViewTextBoxColumn.Width = 150;
             // 
-            // txt_email
+            // corDataGridViewTextBoxColumn
             // 
-            this.txt_email.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoa_dsBindingSource, "email", true));
-            this.txt_email.Location = new System.Drawing.Point(149, 134);
-            this.txt_email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(135, 20);
-            this.txt_email.TabIndex = 10;
+            this.corDataGridViewTextBoxColumn.DataPropertyName = "Cor";
+            this.corDataGridViewTextBoxColumn.HeaderText = "Cor";
+            this.corDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.corDataGridViewTextBoxColumn.Name = "corDataGridViewTextBoxColumn";
+            this.corDataGridViewTextBoxColumn.Width = 150;
             // 
-            // txt_data_nascimento
+            // materialDataGridViewTextBoxColumn
             // 
-            this.txt_data_nascimento.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.pessoa_dsBindingSource, "data_nascimento", true));
-            this.txt_data_nascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txt_data_nascimento.Location = new System.Drawing.Point(149, 155);
-            this.txt_data_nascimento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_data_nascimento.Name = "txt_data_nascimento";
-            this.txt_data_nascimento.Size = new System.Drawing.Size(135, 20);
-            this.txt_data_nascimento.TabIndex = 12;
+            this.materialDataGridViewTextBoxColumn.DataPropertyName = "Material";
+            this.materialDataGridViewTextBoxColumn.HeaderText = "Material";
+            this.materialDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.materialDataGridViewTextBoxColumn.Name = "materialDataGridViewTextBoxColumn";
+            this.materialDataGridViewTextBoxColumn.Width = 150;
             // 
-            // table_pessoa_ds
+            // preçoDataGridViewTextBoxColumn
             // 
-            this.table_pessoa_ds.AutoGenerateColumns = false;
-            this.table_pessoa_ds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.table_pessoa_ds.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.table_pessoa_ds.DataSource = this.pessoa_dsBindingSource;
-            this.table_pessoa_ds.Location = new System.Drawing.Point(11, 201);
-            this.table_pessoa_ds.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.table_pessoa_ds.Name = "table_pessoa_ds";
-            this.table_pessoa_ds.RowHeadersWidth = 62;
-            this.table_pessoa_ds.RowTemplate.Height = 28;
-            this.table_pessoa_ds.Size = new System.Drawing.Size(964, 166);
-            this.table_pessoa_ds.TabIndex = 13;
+            this.preçoDataGridViewTextBoxColumn.DataPropertyName = "Preço";
+            this.preçoDataGridViewTextBoxColumn.HeaderText = "Preço";
+            this.preçoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.preçoDataGridViewTextBoxColumn.Name = "preçoDataGridViewTextBoxColumn";
+            this.preçoDataGridViewTextBoxColumn.Width = 150;
             // 
-            // dataGridViewTextBoxColumn1
+            // dataLançamentoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_PESSOA";
-            this.dataGridViewTextBoxColumn1.HeaderText = "id_PESSOA";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 150;
+            this.dataLançamentoDataGridViewTextBoxColumn.DataPropertyName = "Data_Lançamento";
+            this.dataLançamentoDataGridViewTextBoxColumn.HeaderText = "Data_Lançamento";
+            this.dataLançamentoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.dataLançamentoDataGridViewTextBoxColumn.Name = "dataLançamentoDataGridViewTextBoxColumn";
+            this.dataLançamentoDataGridViewTextBoxColumn.Width = 150;
             // 
-            // dataGridViewTextBoxColumn2
+            // idTextBox
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "nome";
-            this.dataGridViewTextBoxColumn2.HeaderText = "nome";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 150;
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "id", true));
+            this.idTextBox.Font = new System.Drawing.Font("Arial", 12F);
+            this.idTextBox.Location = new System.Drawing.Point(226, 53);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(200, 35);
+            this.idTextBox.TabIndex = 3;
             // 
-            // dataGridViewTextBoxColumn3
+            // nomeTextBox
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "endereço";
-            this.dataGridViewTextBoxColumn3.HeaderText = "endereço";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 150;
+            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Nome", true));
+            this.nomeTextBox.Font = new System.Drawing.Font("Arial", 12F);
+            this.nomeTextBox.Location = new System.Drawing.Point(226, 85);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(200, 35);
+            this.nomeTextBox.TabIndex = 5;
             // 
-            // dataGridViewTextBoxColumn4
+            // marcaTextBox
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "cidade";
-            this.dataGridViewTextBoxColumn4.HeaderText = "cidade";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 150;
+            this.marcaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Marca", true));
+            this.marcaTextBox.Font = new System.Drawing.Font("Arial", 12F);
+            this.marcaTextBox.Location = new System.Drawing.Point(226, 117);
+            this.marcaTextBox.Name = "marcaTextBox";
+            this.marcaTextBox.Size = new System.Drawing.Size(200, 35);
+            this.marcaTextBox.TabIndex = 7;
             // 
-            // dataGridViewTextBoxColumn5
+            // tamanhoTextBox
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "email";
-            this.dataGridViewTextBoxColumn5.HeaderText = "email";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 150;
+            this.tamanhoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Tamanho", true));
+            this.tamanhoTextBox.Font = new System.Drawing.Font("Arial", 12F);
+            this.tamanhoTextBox.Location = new System.Drawing.Point(226, 149);
+            this.tamanhoTextBox.Name = "tamanhoTextBox";
+            this.tamanhoTextBox.Size = new System.Drawing.Size(200, 35);
+            this.tamanhoTextBox.TabIndex = 9;
             // 
-            // dataGridViewTextBoxColumn6
+            // corTextBox
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "data_nascimento";
-            this.dataGridViewTextBoxColumn6.HeaderText = "data_nascimento";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 150;
+            this.corTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Cor", true));
+            this.corTextBox.Font = new System.Drawing.Font("Arial", 12F);
+            this.corTextBox.Location = new System.Drawing.Point(226, 181);
+            this.corTextBox.Name = "corTextBox";
+            this.corTextBox.Size = new System.Drawing.Size(200, 35);
+            this.corTextBox.TabIndex = 11;
             // 
-            // pessoa_dsTableAdapter
+            // materialTextBox
             // 
-            this.pessoa_dsTableAdapter.ClearBeforeFill = true;
+            this.materialTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Material", true));
+            this.materialTextBox.Font = new System.Drawing.Font("Arial", 12F);
+            this.materialTextBox.Location = new System.Drawing.Point(226, 213);
+            this.materialTextBox.Name = "materialTextBox";
+            this.materialTextBox.Size = new System.Drawing.Size(200, 35);
+            this.materialTextBox.TabIndex = 13;
             // 
-            // tableAdapterManager
+            // preçoTextBox
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Pessoa_dsTableAdapter = this.pessoa_dsTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Cadastro.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.preçoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Preço", true));
+            this.preçoTextBox.Font = new System.Drawing.Font("Arial", 12F);
+            this.preçoTextBox.Location = new System.Drawing.Point(226, 245);
+            this.preçoTextBox.Name = "preçoTextBox";
+            this.preçoTextBox.Size = new System.Drawing.Size(200, 35);
+            this.preçoTextBox.TabIndex = 15;
+            // 
+            // data_LançamentoDateTimePicker
+            // 
+            this.data_LançamentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.roupasBindingSource, "Data_Lançamento", true));
+            this.data_LançamentoDateTimePicker.Font = new System.Drawing.Font("Arial", 12F);
+            this.data_LançamentoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.data_LançamentoDateTimePicker.Location = new System.Drawing.Point(226, 277);
+            this.data_LançamentoDateTimePicker.Name = "data_LançamentoDateTimePicker";
+            this.data_LançamentoDateTimePicker.Size = new System.Drawing.Size(200, 35);
+            this.data_LançamentoDateTimePicker.TabIndex = 17;
             // 
             // frmForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 399);
-            this.Controls.Add(this.table_pessoa_ds);
-            this.Controls.Add(lbl_id_PESSOA);
-            this.Controls.Add(this.txt_id_PESSOA);
-            this.Controls.Add(lbl_nome);
-            this.Controls.Add(this.txt_nome);
-            this.Controls.Add(lbl_endereço);
-            this.Controls.Add(this.txt_endereço);
-            this.Controls.Add(lbl_cidade);
-            this.Controls.Add(this.txt_cidade);
-            this.Controls.Add(lbl_email);
-            this.Controls.Add(this.txt_email);
-            this.Controls.Add(lbl_data_nascimento);
-            this.Controls.Add(this.txt_data_nascimento);
-            this.Controls.Add(this.pessoa_dsBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(1308, 630);
+            this.Controls.Add(idLabel);
+            this.Controls.Add(this.idTextBox);
+            this.Controls.Add(nomeLabel);
+            this.Controls.Add(this.nomeTextBox);
+            this.Controls.Add(marcaLabel);
+            this.Controls.Add(this.marcaTextBox);
+            this.Controls.Add(tamanhoLabel);
+            this.Controls.Add(this.tamanhoTextBox);
+            this.Controls.Add(corLabel);
+            this.Controls.Add(this.corTextBox);
+            this.Controls.Add(materialLabel);
+            this.Controls.Add(this.materialTextBox);
+            this.Controls.Add(preçoLabel);
+            this.Controls.Add(this.preçoTextBox);
+            this.Controls.Add(data_LançamentoLabel);
+            this.Controls.Add(this.data_LançamentoDateTimePicker);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.roupasBindingNavigator);
             this.Name = "frmForm";
-            this.Text = "Casdastro_de_pessoas";
+            this.Text = "Casdastro de Roupas";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pessoa_dsBindingNavigator)).EndInit();
-            this.pessoa_dsBindingNavigator.ResumeLayout(false);
-            this.pessoa_dsBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoa_dsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table_pessoa_ds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRoupa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roupasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roupasBindingNavigator)).EndInit();
+            this.roupasBindingNavigator.ResumeLayout(false);
+            this.roupasBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,11 +511,11 @@ namespace Cadastro
 
         #endregion
 
-        private DataSet1 dataSet1;
-        private System.Windows.Forms.BindingSource pessoa_dsBindingSource;
-        private DataSet1TableAdapters.Pessoa_dsTableAdapter pessoa_dsTableAdapter;
-        private DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator pessoa_dsBindingNavigator;
+        private DataSetRoupa dataSetRoupa;
+        private System.Windows.Forms.BindingSource roupasBindingSource;
+        private DataSetRoupaTableAdapters.RoupasTableAdapter roupasTableAdapter;
+        private DataSetRoupaTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator roupasBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -470,20 +527,24 @@ namespace Cadastro
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton pessoa_dsBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox txt_id_PESSOA;
-        private System.Windows.Forms.TextBox txt_nome;
-        private System.Windows.Forms.TextBox txt_endereço;
-        private System.Windows.Forms.TextBox txt_cidade;
-        private System.Windows.Forms.TextBox txt_email;
-        private System.Windows.Forms.DateTimePicker txt_data_nascimento;
-        private System.Windows.Forms.DataGridView table_pessoa_ds;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.ToolStripButton roupasBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tamanhoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn corDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materialDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preçoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataLançamentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TextBox nomeTextBox;
+        private System.Windows.Forms.TextBox marcaTextBox;
+        private System.Windows.Forms.TextBox tamanhoTextBox;
+        private System.Windows.Forms.TextBox corTextBox;
+        private System.Windows.Forms.TextBox materialTextBox;
+        private System.Windows.Forms.TextBox preçoTextBox;
+        private System.Windows.Forms.DateTimePicker data_LançamentoDateTimePicker;
     }
 }
 

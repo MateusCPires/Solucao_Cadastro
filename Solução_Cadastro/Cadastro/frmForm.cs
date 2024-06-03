@@ -20,23 +20,25 @@ namespace Cadastro
         private void pessoa_dsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.pessoa_dsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet1);
+            this.roupasBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dataSetRoupa);
 
         }
 
         private void pessoa_dsBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
-            this.pessoa_dsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet1);
+            this.roupasBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dataSetRoupa);
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'dataSet1.Pessoa_ds'. Você pode movê-la ou removê-la conforme necessário.
-            this.pessoa_dsTableAdapter.Fill(this.dataSet1.Pessoa_ds);
+            // TODO: esta linha de código carrega dados na tabela 'dataSetRoupa.Roupas'. Você pode movê-la ou removê-la conforme necessário.
+            this.roupasTableAdapter.Fill(this.dataSetRoupa.Roupas);
+            // TODO: esta linha de código carrega dados na tabela 'dataSetRoupa.Pessoa_ds'. Você pode movê-la ou removê-la conforme necessário.
+            this.roupasTableAdapter.Fill(this.dataSetRoupa.Roupas);
 
         }
 
@@ -48,13 +50,19 @@ namespace Cadastro
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja deletar este item?", "Excluindo item...",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)==DialogResult.Yes)
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                pessoa_dsBindingSource.RemoveCurrent();
-                this.tableAdapterManager.UpdateAll(this.dataSet1);
+                roupasBindingSource.RemoveCurrent();
+                this.tableAdapterManager.UpdateAll(this.dataSetRoupa);
             }
         }
 
-      
+        private void roupasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.roupasBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dataSetRoupa);
+
+        }
     }
 }

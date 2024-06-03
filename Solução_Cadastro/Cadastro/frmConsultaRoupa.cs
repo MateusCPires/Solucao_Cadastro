@@ -22,7 +22,7 @@ namespace Cadastro
             // TODO: esta linha de código carrega dados na tabela 'dataSetRoupa.Roupas'. Você pode movê-la ou removê-la conforme necessário.
             this.roupasTableAdapter.Fill(this.dataSetRoupa.Roupas);
             // TODO: esta linha de código carrega dados na tabela 'dataSet1.Pessoa_ds'. Você pode movê-la ou removê-la conforme necessário.
-            this.pessoa_dsTableAdapter.Fill(this.dataSet1.Pessoa_ds);
+            this.roupasTableAdapter.Fill(this.dataSetRoupa.Roupas);
 
         }
 

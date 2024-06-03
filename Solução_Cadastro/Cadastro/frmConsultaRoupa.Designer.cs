@@ -31,6 +31,16 @@ namespace Cadastro
         {
             this.components = new System.ComponentModel.Container();
             this.table_pessoa_ds2 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tamanhoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.corDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preçoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataLançamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roupasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetRoupa = new Cadastro.DataSetRoupa();
             this.pessoa_dsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new Cadastro.DataSet1();
             this.pessoa_dsTableAdapter = new Cadastro.DataSet1TableAdapters.Pessoa_dsTableAdapter();
@@ -41,25 +51,14 @@ namespace Cadastro
             this.label3 = new System.Windows.Forms.Label();
             this.cmbColuna = new System.Windows.Forms.ComboBox();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.dataSetRoupa = new Cadastro.DataSetRoupa();
-            this.roupasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roupasTableAdapter = new Cadastro.DataSetRoupaTableAdapters.RoupasTableAdapter();
             this.tableAdapterManager1 = new Cadastro.DataSetRoupaTableAdapters.TableAdapterManager();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tamanhoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.corDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preçoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataLançamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.table_pessoa_ds2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roupasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRoupa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoa_dsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetRoupa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roupasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // table_pessoa_ds2
@@ -76,13 +75,87 @@ namespace Cadastro
             this.preçoDataGridViewTextBoxColumn,
             this.dataLançamentoDataGridViewTextBoxColumn});
             this.table_pessoa_ds2.DataSource = this.roupasBindingSource;
-            this.table_pessoa_ds2.Location = new System.Drawing.Point(8, 103);
-            this.table_pessoa_ds2.Margin = new System.Windows.Forms.Padding(2);
+            this.table_pessoa_ds2.Location = new System.Drawing.Point(12, 158);
             this.table_pessoa_ds2.Name = "table_pessoa_ds2";
             this.table_pessoa_ds2.RowHeadersWidth = 62;
             this.table_pessoa_ds2.RowTemplate.Height = 28;
-            this.table_pessoa_ds2.Size = new System.Drawing.Size(964, 158);
+            this.table_pessoa_ds2.Size = new System.Drawing.Size(1261, 279);
             this.table_pessoa_ds2.TabIndex = 2;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            this.marcaDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tamanhoDataGridViewTextBoxColumn
+            // 
+            this.tamanhoDataGridViewTextBoxColumn.DataPropertyName = "Tamanho";
+            this.tamanhoDataGridViewTextBoxColumn.HeaderText = "Tamanho";
+            this.tamanhoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tamanhoDataGridViewTextBoxColumn.Name = "tamanhoDataGridViewTextBoxColumn";
+            this.tamanhoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // corDataGridViewTextBoxColumn
+            // 
+            this.corDataGridViewTextBoxColumn.DataPropertyName = "Cor";
+            this.corDataGridViewTextBoxColumn.HeaderText = "Cor";
+            this.corDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.corDataGridViewTextBoxColumn.Name = "corDataGridViewTextBoxColumn";
+            this.corDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // materialDataGridViewTextBoxColumn
+            // 
+            this.materialDataGridViewTextBoxColumn.DataPropertyName = "Material";
+            this.materialDataGridViewTextBoxColumn.HeaderText = "Material";
+            this.materialDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.materialDataGridViewTextBoxColumn.Name = "materialDataGridViewTextBoxColumn";
+            this.materialDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // preçoDataGridViewTextBoxColumn
+            // 
+            this.preçoDataGridViewTextBoxColumn.DataPropertyName = "Preço";
+            this.preçoDataGridViewTextBoxColumn.HeaderText = "Preço";
+            this.preçoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.preçoDataGridViewTextBoxColumn.Name = "preçoDataGridViewTextBoxColumn";
+            this.preçoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dataLançamentoDataGridViewTextBoxColumn
+            // 
+            this.dataLançamentoDataGridViewTextBoxColumn.DataPropertyName = "Data_Lançamento";
+            this.dataLançamentoDataGridViewTextBoxColumn.HeaderText = "Data_Lançamento";
+            this.dataLançamentoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.dataLançamentoDataGridViewTextBoxColumn.Name = "dataLançamentoDataGridViewTextBoxColumn";
+            this.dataLançamentoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // roupasBindingSource
+            // 
+            this.roupasBindingSource.DataMember = "Roupas";
+            this.roupasBindingSource.DataSource = this.dataSetRoupa;
+            // 
+            // dataSetRoupa
+            // 
+            this.dataSetRoupa.DataSetName = "DataSetRoupa";
+            this.dataSetRoupa.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pessoa_dsBindingSource
             // 
@@ -113,20 +186,18 @@ namespace Cadastro
             "Igual a",
             "Começa com",
             "Termina com"});
-            this.cmbProcurar.Location = new System.Drawing.Point(96, 42);
-            this.cmbProcurar.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbProcurar.Location = new System.Drawing.Point(144, 65);
             this.cmbProcurar.Name = "cmbProcurar";
-            this.cmbProcurar.Size = new System.Drawing.Size(82, 21);
+            this.cmbProcurar.Size = new System.Drawing.Size(121, 28);
             this.cmbProcurar.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F);
-            this.label1.Location = new System.Drawing.Point(188, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(282, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 18);
+            this.label1.Size = new System.Drawing.Size(56, 27);
             this.label1.TabIndex = 4;
             this.label1.Text = "Por:";
             // 
@@ -134,10 +205,9 @@ namespace Cadastro
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F);
-            this.label2.Location = new System.Drawing.Point(11, 22);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(16, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 18);
+            this.label2.Size = new System.Drawing.Size(89, 27);
             this.label2.TabIndex = 5;
             this.label2.Text = "Coluna";
             // 
@@ -145,10 +215,9 @@ namespace Cadastro
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F);
-            this.label3.Location = new System.Drawing.Point(93, 22);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(140, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 18);
+            this.label3.Size = new System.Drawing.Size(104, 27);
             this.label3.TabIndex = 6;
             this.label3.Text = "Procurar";
             // 
@@ -162,51 +231,30 @@ namespace Cadastro
             "Cidade",
             "Email",
             "Data Nascimento"});
-            this.cmbColuna.Location = new System.Drawing.Point(11, 42);
-            this.cmbColuna.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbColuna.Location = new System.Drawing.Point(16, 65);
             this.cmbColuna.Name = "cmbColuna";
-            this.cmbColuna.Size = new System.Drawing.Size(82, 21);
+            this.cmbColuna.Size = new System.Drawing.Size(121, 28);
             this.cmbColuna.TabIndex = 7;
             this.cmbColuna.SelectedIndexChanged += new System.EventHandler(this.cmbColuna_SelectedIndexChanged);
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(191, 42);
-            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPesquisa.Location = new System.Drawing.Point(286, 65);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(306, 20);
+            this.txtPesquisa.Size = new System.Drawing.Size(457, 26);
             this.txtPesquisa.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(542, 43);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 20);
-            this.textBox2.TabIndex = 9;
             // 
             // btnFiltrar
             // 
             this.btnFiltrar.Font = new System.Drawing.Font("Arial", 12F);
             this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltrar.Location = new System.Drawing.Point(800, 37);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFiltrar.Location = new System.Drawing.Point(749, 56);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(176, 26);
+            this.btnFiltrar.Size = new System.Drawing.Size(264, 40);
             this.btnFiltrar.TabIndex = 1;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
-            // dataSetRoupa
-            // 
-            this.dataSetRoupa.DataSetName = "DataSetRoupa";
-            this.dataSetRoupa.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // roupasBindingSource
-            // 
-            this.roupasBindingSource.DataMember = "Roupas";
-            this.roupasBindingSource.DataSource = this.dataSetRoupa;
             // 
             // roupasTableAdapter
             // 
@@ -218,61 +266,11 @@ namespace Cadastro
             this.tableAdapterManager1.RoupasTableAdapter = this.roupasTableAdapter;
             this.tableAdapterManager1.UpdateOrder = Cadastro.DataSetRoupaTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            // 
-            // marcaDataGridViewTextBoxColumn
-            // 
-            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
-            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            // 
-            // tamanhoDataGridViewTextBoxColumn
-            // 
-            this.tamanhoDataGridViewTextBoxColumn.DataPropertyName = "Tamanho";
-            this.tamanhoDataGridViewTextBoxColumn.HeaderText = "Tamanho";
-            this.tamanhoDataGridViewTextBoxColumn.Name = "tamanhoDataGridViewTextBoxColumn";
-            // 
-            // corDataGridViewTextBoxColumn
-            // 
-            this.corDataGridViewTextBoxColumn.DataPropertyName = "Cor";
-            this.corDataGridViewTextBoxColumn.HeaderText = "Cor";
-            this.corDataGridViewTextBoxColumn.Name = "corDataGridViewTextBoxColumn";
-            // 
-            // materialDataGridViewTextBoxColumn
-            // 
-            this.materialDataGridViewTextBoxColumn.DataPropertyName = "Material";
-            this.materialDataGridViewTextBoxColumn.HeaderText = "Material";
-            this.materialDataGridViewTextBoxColumn.Name = "materialDataGridViewTextBoxColumn";
-            // 
-            // preçoDataGridViewTextBoxColumn
-            // 
-            this.preçoDataGridViewTextBoxColumn.DataPropertyName = "Preço";
-            this.preçoDataGridViewTextBoxColumn.HeaderText = "Preço";
-            this.preçoDataGridViewTextBoxColumn.Name = "preçoDataGridViewTextBoxColumn";
-            // 
-            // dataLançamentoDataGridViewTextBoxColumn
-            // 
-            this.dataLançamentoDataGridViewTextBoxColumn.DataPropertyName = "Data_Lançamento";
-            this.dataLançamentoDataGridViewTextBoxColumn.HeaderText = "Data_Lançamento";
-            this.dataLançamentoDataGridViewTextBoxColumn.Name = "dataLançamentoDataGridViewTextBoxColumn";
-            // 
             // frmConsultaRoupa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 292);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(1570, 449);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.cmbColuna);
             this.Controls.Add(this.label3);
@@ -281,15 +279,14 @@ namespace Cadastro
             this.Controls.Add(this.cmbProcurar);
             this.Controls.Add(this.table_pessoa_ds2);
             this.Controls.Add(this.btnFiltrar);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmConsultaRoupa";
             this.Text = "Consulta de Roupas";
             this.Load += new System.EventHandler(this.ConsultaPessoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.table_pessoa_ds2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roupasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRoupa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoa_dsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetRoupa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roupasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,7 +305,6 @@ namespace Cadastro
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbColuna;
         private System.Windows.Forms.TextBox txtPesquisa;
-        private System.Windows.Forms.TextBox textBox2;
         private DataSetRoupa dataSetRoupa;
         private System.Windows.Forms.BindingSource roupasBindingSource;
         private DataSetRoupaTableAdapters.RoupasTableAdapter roupasTableAdapter;
