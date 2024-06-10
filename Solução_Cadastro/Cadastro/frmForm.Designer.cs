@@ -30,7 +30,6 @@ namespace Cadastro
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label nomeLabel;
             System.Windows.Forms.Label marcaLabel;
             System.Windows.Forms.Label tamanhoLabel;
@@ -65,7 +64,6 @@ namespace Cadastro
             this.materialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preçoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataLançamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idTextBox = new System.Windows.Forms.TextBox();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.marcaTextBox = new System.Windows.Forms.TextBox();
             this.tamanhoTextBox = new System.Windows.Forms.TextBox();
@@ -73,7 +71,7 @@ namespace Cadastro
             this.materialTextBox = new System.Windows.Forms.TextBox();
             this.preçoTextBox = new System.Windows.Forms.TextBox();
             this.data_LançamentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            idLabel = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             nomeLabel = new System.Windows.Forms.Label();
             marcaLabel = new System.Windows.Forms.Label();
             tamanhoLabel = new System.Windows.Forms.Label();
@@ -88,21 +86,11 @@ namespace Cadastro
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Font = new System.Drawing.Font("Arial", 12F);
-            idLabel.Location = new System.Drawing.Point(12, 60);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(38, 27);
-            idLabel.TabIndex = 2;
-            idLabel.Text = "id:";
-            // 
             // nomeLabel
             // 
             nomeLabel.AutoSize = true;
             nomeLabel.Font = new System.Drawing.Font("Arial", 12F);
-            nomeLabel.Location = new System.Drawing.Point(12, 92);
+            nomeLabel.Location = new System.Drawing.Point(15, 43);
             nomeLabel.Name = "nomeLabel";
             nomeLabel.Size = new System.Drawing.Size(82, 27);
             nomeLabel.TabIndex = 4;
@@ -112,7 +100,7 @@ namespace Cadastro
             // 
             marcaLabel.AutoSize = true;
             marcaLabel.Font = new System.Drawing.Font("Arial", 12F);
-            marcaLabel.Location = new System.Drawing.Point(12, 124);
+            marcaLabel.Location = new System.Drawing.Point(15, 75);
             marcaLabel.Name = "marcaLabel";
             marcaLabel.Size = new System.Drawing.Size(84, 27);
             marcaLabel.TabIndex = 6;
@@ -122,7 +110,7 @@ namespace Cadastro
             // 
             tamanhoLabel.AutoSize = true;
             tamanhoLabel.Font = new System.Drawing.Font("Arial", 12F);
-            tamanhoLabel.Location = new System.Drawing.Point(12, 156);
+            tamanhoLabel.Location = new System.Drawing.Point(15, 107);
             tamanhoLabel.Name = "tamanhoLabel";
             tamanhoLabel.Size = new System.Drawing.Size(117, 27);
             tamanhoLabel.TabIndex = 8;
@@ -132,7 +120,7 @@ namespace Cadastro
             // 
             corLabel.AutoSize = true;
             corLabel.Font = new System.Drawing.Font("Arial", 12F);
-            corLabel.Location = new System.Drawing.Point(12, 188);
+            corLabel.Location = new System.Drawing.Point(15, 139);
             corLabel.Name = "corLabel";
             corLabel.Size = new System.Drawing.Size(57, 27);
             corLabel.TabIndex = 10;
@@ -142,7 +130,7 @@ namespace Cadastro
             // 
             materialLabel.AutoSize = true;
             materialLabel.Font = new System.Drawing.Font("Arial", 12F);
-            materialLabel.Location = new System.Drawing.Point(12, 220);
+            materialLabel.Location = new System.Drawing.Point(-152, 217);
             materialLabel.Name = "materialLabel";
             materialLabel.Size = new System.Drawing.Size(103, 27);
             materialLabel.TabIndex = 12;
@@ -152,7 +140,7 @@ namespace Cadastro
             // 
             preçoLabel.AutoSize = true;
             preçoLabel.Font = new System.Drawing.Font("Arial", 12F);
-            preçoLabel.Location = new System.Drawing.Point(12, 252);
+            preçoLabel.Location = new System.Drawing.Point(15, 203);
             preçoLabel.Name = "preçoLabel";
             preçoLabel.Size = new System.Drawing.Size(81, 27);
             preçoLabel.TabIndex = 14;
@@ -162,7 +150,7 @@ namespace Cadastro
             // 
             data_LançamentoLabel.AutoSize = true;
             data_LançamentoLabel.Font = new System.Drawing.Font("Arial", 12F);
-            data_LançamentoLabel.Location = new System.Drawing.Point(12, 285);
+            data_LançamentoLabel.Location = new System.Drawing.Point(15, 236);
             data_LançamentoLabel.Name = "data_LançamentoLabel";
             data_LançamentoLabel.Size = new System.Drawing.Size(208, 27);
             data_LançamentoLabel.TabIndex = 16;
@@ -271,6 +259,7 @@ namespace Cadastro
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posição";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 31);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -399,20 +388,11 @@ namespace Cadastro
             this.dataLançamentoDataGridViewTextBoxColumn.Name = "dataLançamentoDataGridViewTextBoxColumn";
             this.dataLançamentoDataGridViewTextBoxColumn.Width = 150;
             // 
-            // idTextBox
-            // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "id", true));
-            this.idTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.idTextBox.Location = new System.Drawing.Point(226, 53);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(200, 35);
-            this.idTextBox.TabIndex = 3;
-            // 
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Nome", true));
             this.nomeTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.nomeTextBox.Location = new System.Drawing.Point(226, 85);
+            this.nomeTextBox.Location = new System.Drawing.Point(229, 36);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(200, 35);
             this.nomeTextBox.TabIndex = 5;
@@ -421,7 +401,7 @@ namespace Cadastro
             // 
             this.marcaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Marca", true));
             this.marcaTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.marcaTextBox.Location = new System.Drawing.Point(226, 117);
+            this.marcaTextBox.Location = new System.Drawing.Point(229, 68);
             this.marcaTextBox.Name = "marcaTextBox";
             this.marcaTextBox.Size = new System.Drawing.Size(200, 35);
             this.marcaTextBox.TabIndex = 7;
@@ -430,7 +410,7 @@ namespace Cadastro
             // 
             this.tamanhoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Tamanho", true));
             this.tamanhoTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.tamanhoTextBox.Location = new System.Drawing.Point(226, 149);
+            this.tamanhoTextBox.Location = new System.Drawing.Point(229, 100);
             this.tamanhoTextBox.Name = "tamanhoTextBox";
             this.tamanhoTextBox.Size = new System.Drawing.Size(200, 35);
             this.tamanhoTextBox.TabIndex = 9;
@@ -439,7 +419,7 @@ namespace Cadastro
             // 
             this.corTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Cor", true));
             this.corTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.corTextBox.Location = new System.Drawing.Point(226, 181);
+            this.corTextBox.Location = new System.Drawing.Point(229, 132);
             this.corTextBox.Name = "corTextBox";
             this.corTextBox.Size = new System.Drawing.Size(200, 35);
             this.corTextBox.TabIndex = 11;
@@ -448,7 +428,7 @@ namespace Cadastro
             // 
             this.materialTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Material", true));
             this.materialTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.materialTextBox.Location = new System.Drawing.Point(226, 213);
+            this.materialTextBox.Location = new System.Drawing.Point(229, 164);
             this.materialTextBox.Name = "materialTextBox";
             this.materialTextBox.Size = new System.Drawing.Size(200, 35);
             this.materialTextBox.TabIndex = 13;
@@ -457,7 +437,7 @@ namespace Cadastro
             // 
             this.preçoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Preço", true));
             this.preçoTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.preçoTextBox.Location = new System.Drawing.Point(226, 245);
+            this.preçoTextBox.Location = new System.Drawing.Point(229, 196);
             this.preçoTextBox.Name = "preçoTextBox";
             this.preçoTextBox.Size = new System.Drawing.Size(200, 35);
             this.preçoTextBox.TabIndex = 15;
@@ -467,18 +447,29 @@ namespace Cadastro
             this.data_LançamentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.roupasBindingSource, "Data_Lançamento", true));
             this.data_LançamentoDateTimePicker.Font = new System.Drawing.Font("Arial", 12F);
             this.data_LançamentoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.data_LançamentoDateTimePicker.Location = new System.Drawing.Point(226, 277);
+            this.data_LançamentoDateTimePicker.Location = new System.Drawing.Point(229, 228);
             this.data_LançamentoDateTimePicker.Name = "data_LançamentoDateTimePicker";
             this.data_LançamentoDateTimePicker.Size = new System.Drawing.Size(200, 35);
             this.data_LançamentoDateTimePicker.TabIndex = 17;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.roupasBindingSource, "Tamanho", true));
+            this.comboBox1.DataSource = this.roupasBindingSource;
+            this.comboBox1.DisplayMember = "Tamanho";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(547, 119);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 18;
+            this.comboBox1.ValueMember = "Tamanho";
             // 
             // frmForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1308, 630);
-            this.Controls.Add(idLabel);
-            this.Controls.Add(this.idTextBox);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(nomeLabel);
             this.Controls.Add(this.nomeTextBox);
             this.Controls.Add(marcaLabel);
@@ -537,7 +528,6 @@ namespace Cadastro
         private System.Windows.Forms.DataGridViewTextBoxColumn materialDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn preçoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataLançamentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox nomeTextBox;
         private System.Windows.Forms.TextBox marcaTextBox;
         private System.Windows.Forms.TextBox tamanhoTextBox;
@@ -545,6 +535,7 @@ namespace Cadastro
         private System.Windows.Forms.TextBox materialTextBox;
         private System.Windows.Forms.TextBox preçoTextBox;
         private System.Windows.Forms.DateTimePicker data_LançamentoDateTimePicker;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
