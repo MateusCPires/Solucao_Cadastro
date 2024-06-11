@@ -46,14 +46,18 @@ namespace Cadastro
             this.pessoa_dsTableAdapter = new Cadastro.DataSet1TableAdapters.Pessoa_dsTableAdapter();
             this.tableAdapterManager = new Cadastro.DataSet1TableAdapters.TableAdapterManager();
             this.cmbProcurar = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTexto1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbColuna = new System.Windows.Forms.ComboBox();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.txtPesquisa1 = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.roupasTableAdapter = new Cadastro.DataSetRoupaTableAdapters.RoupasTableAdapter();
             this.tableAdapterManager1 = new Cadastro.DataSetRoupaTableAdapters.TableAdapterManager();
+            this.calData1 = new System.Windows.Forms.MonthCalendar();
+            this.calData2 = new System.Windows.Forms.MonthCalendar();
+            this.txtPesquisa2 = new System.Windows.Forms.TextBox();
+            this.lblTexto2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.table_pessoa_ds2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roupasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetRoupa)).BeginInit();
@@ -75,11 +79,12 @@ namespace Cadastro
             this.preçoDataGridViewTextBoxColumn,
             this.dataLançamentoDataGridViewTextBoxColumn});
             this.table_pessoa_ds2.DataSource = this.roupasBindingSource;
-            this.table_pessoa_ds2.Location = new System.Drawing.Point(12, 158);
+            this.table_pessoa_ds2.Location = new System.Drawing.Point(11, 191);
+            this.table_pessoa_ds2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.table_pessoa_ds2.Name = "table_pessoa_ds2";
             this.table_pessoa_ds2.RowHeadersWidth = 62;
             this.table_pessoa_ds2.RowTemplate.Height = 28;
-            this.table_pessoa_ds2.Size = new System.Drawing.Size(1261, 279);
+            this.table_pessoa_ds2.Size = new System.Drawing.Size(1025, 225);
             this.table_pessoa_ds2.TabIndex = 2;
             // 
             // idDataGridViewTextBoxColumn
@@ -182,32 +187,37 @@ namespace Cadastro
             this.cmbProcurar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProcurar.FormattingEnabled = true;
             this.cmbProcurar.Items.AddRange(new object[] {
+            "Todos",
             "Contém",
             "Igual a",
             "Começa com",
             "Termina com"});
-            this.cmbProcurar.Location = new System.Drawing.Point(144, 65);
+            this.cmbProcurar.Location = new System.Drawing.Point(96, 42);
+            this.cmbProcurar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbProcurar.Name = "cmbProcurar";
-            this.cmbProcurar.Size = new System.Drawing.Size(121, 28);
+            this.cmbProcurar.Size = new System.Drawing.Size(82, 21);
             this.cmbProcurar.TabIndex = 3;
+            this.cmbProcurar.SelectedIndexChanged += new System.EventHandler(this.cmbProcurar_SelectedIndexChanged);
             // 
-            // label1
+            // lblTexto1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F);
-            this.label1.Location = new System.Drawing.Point(282, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 27);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Por:";
+            this.lblTexto1.AutoSize = true;
+            this.lblTexto1.Font = new System.Drawing.Font("Arial", 12F);
+            this.lblTexto1.Location = new System.Drawing.Point(188, 22);
+            this.lblTexto1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTexto1.Name = "lblTexto1";
+            this.lblTexto1.Size = new System.Drawing.Size(37, 18);
+            this.lblTexto1.TabIndex = 4;
+            this.lblTexto1.Text = "Por:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F);
-            this.label2.Location = new System.Drawing.Point(16, 34);
+            this.label2.Location = new System.Drawing.Point(11, 22);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 27);
+            this.label2.Size = new System.Drawing.Size(57, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "Coluna";
             // 
@@ -215,9 +225,10 @@ namespace Cadastro
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F);
-            this.label3.Location = new System.Drawing.Point(140, 34);
+            this.label3.Location = new System.Drawing.Point(93, 22);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 27);
+            this.label3.Size = new System.Drawing.Size(68, 18);
             this.label3.TabIndex = 6;
             this.label3.Text = "Procurar";
             // 
@@ -228,29 +239,35 @@ namespace Cadastro
             this.cmbColuna.Items.AddRange(new object[] {
             "ID",
             "Nome",
-            "Cidade",
-            "Email",
-            "Data Nascimento"});
-            this.cmbColuna.Location = new System.Drawing.Point(16, 65);
+            "Marca",
+            "Tamanho",
+            "Cor",
+            "Material",
+            "Preço",
+            "Data de Lançamento"});
+            this.cmbColuna.Location = new System.Drawing.Point(11, 42);
+            this.cmbColuna.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbColuna.Name = "cmbColuna";
-            this.cmbColuna.Size = new System.Drawing.Size(121, 28);
+            this.cmbColuna.Size = new System.Drawing.Size(82, 21);
             this.cmbColuna.TabIndex = 7;
             this.cmbColuna.SelectedIndexChanged += new System.EventHandler(this.cmbColuna_SelectedIndexChanged);
             // 
-            // txtPesquisa
+            // txtPesquisa1
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(286, 65);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(457, 26);
-            this.txtPesquisa.TabIndex = 8;
+            this.txtPesquisa1.Location = new System.Drawing.Point(191, 42);
+            this.txtPesquisa1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPesquisa1.Name = "txtPesquisa1";
+            this.txtPesquisa1.Size = new System.Drawing.Size(306, 20);
+            this.txtPesquisa1.TabIndex = 8;
             // 
             // btnFiltrar
             // 
             this.btnFiltrar.Font = new System.Drawing.Font("Arial", 12F);
             this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltrar.Location = new System.Drawing.Point(749, 56);
+            this.btnFiltrar.Location = new System.Drawing.Point(860, 36);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(264, 40);
+            this.btnFiltrar.Size = new System.Drawing.Size(176, 26);
             this.btnFiltrar.TabIndex = 1;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
@@ -266,19 +283,55 @@ namespace Cadastro
             this.tableAdapterManager1.RoupasTableAdapter = this.roupasTableAdapter;
             this.tableAdapterManager1.UpdateOrder = Cadastro.DataSetRoupaTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // calData1
+            // 
+            this.calData1.Location = new System.Drawing.Point(191, 18);
+            this.calData1.Name = "calData1";
+            this.calData1.TabIndex = 9;
+            // 
+            // calData2
+            // 
+            this.calData2.Location = new System.Drawing.Point(436, 18);
+            this.calData2.Name = "calData2";
+            this.calData2.TabIndex = 10;
+            // 
+            // txtPesquisa2
+            // 
+            this.txtPesquisa2.Location = new System.Drawing.Point(504, 42);
+            this.txtPesquisa2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPesquisa2.Name = "txtPesquisa2";
+            this.txtPesquisa2.Size = new System.Drawing.Size(306, 20);
+            this.txtPesquisa2.TabIndex = 12;
+            // 
+            // lblTexto2
+            // 
+            this.lblTexto2.AutoSize = true;
+            this.lblTexto2.Font = new System.Drawing.Font("Arial", 12F);
+            this.lblTexto2.Location = new System.Drawing.Point(501, 22);
+            this.lblTexto2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTexto2.Name = "lblTexto2";
+            this.lblTexto2.Size = new System.Drawing.Size(37, 18);
+            this.lblTexto2.TabIndex = 11;
+            this.lblTexto2.Text = "Por:";
+            // 
             // frmConsultaRoupa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1570, 449);
-            this.Controls.Add(this.txtPesquisa);
+            this.ClientSize = new System.Drawing.Size(1047, 427);
+            this.Controls.Add(this.txtPesquisa2);
+            this.Controls.Add(this.lblTexto2);
+            this.Controls.Add(this.txtPesquisa1);
             this.Controls.Add(this.cmbColuna);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTexto1);
             this.Controls.Add(this.cmbProcurar);
             this.Controls.Add(this.table_pessoa_ds2);
             this.Controls.Add(this.btnFiltrar);
+            this.Controls.Add(this.calData1);
+            this.Controls.Add(this.calData2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmConsultaRoupa";
             this.Text = "Consulta de Roupas";
             this.Load += new System.EventHandler(this.ConsultaPessoa_Load);
@@ -300,11 +353,11 @@ namespace Cadastro
         private DataSet1TableAdapters.Pessoa_dsTableAdapter pessoa_dsTableAdapter;
         private DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ComboBox cmbProcurar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTexto1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbColuna;
-        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.TextBox txtPesquisa1;
         private DataSetRoupa dataSetRoupa;
         private System.Windows.Forms.BindingSource roupasBindingSource;
         private DataSetRoupaTableAdapters.RoupasTableAdapter roupasTableAdapter;
@@ -317,5 +370,9 @@ namespace Cadastro
         private System.Windows.Forms.DataGridViewTextBoxColumn materialDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn preçoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataLançamentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.MonthCalendar calData1;
+        private System.Windows.Forms.MonthCalendar calData2;
+        private System.Windows.Forms.TextBox txtPesquisa2;
+        private System.Windows.Forms.Label lblTexto2;
     }
 }
