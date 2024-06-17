@@ -38,6 +38,7 @@ namespace Cadastro
             System.Windows.Forms.Label preçoLabel;
             System.Windows.Forms.Label data_LançamentoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmForm));
+            System.Windows.Forms.Label label1;
             this.dataSetRoupa = new Cadastro.DataSetRoupa();
             this.roupasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roupasTableAdapter = new Cadastro.DataSetRoupaTableAdapters.RoupasTableAdapter();
@@ -79,6 +80,7 @@ namespace Cadastro
             materialLabel = new System.Windows.Forms.Label();
             preçoLabel = new System.Windows.Forms.Label();
             data_LançamentoLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetRoupa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roupasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roupasBindingNavigator)).BeginInit();
@@ -90,10 +92,9 @@ namespace Cadastro
             // 
             nomeLabel.AutoSize = true;
             nomeLabel.Font = new System.Drawing.Font("Arial", 12F);
-            nomeLabel.Location = new System.Drawing.Point(10, 28);
-            nomeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            nomeLabel.Location = new System.Drawing.Point(15, 43);
             nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(54, 18);
+            nomeLabel.Size = new System.Drawing.Size(82, 27);
             nomeLabel.TabIndex = 4;
             nomeLabel.Text = "Nome:";
             // 
@@ -101,10 +102,9 @@ namespace Cadastro
             // 
             marcaLabel.AutoSize = true;
             marcaLabel.Font = new System.Drawing.Font("Arial", 12F);
-            marcaLabel.Location = new System.Drawing.Point(10, 49);
-            marcaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            marcaLabel.Location = new System.Drawing.Point(15, 75);
             marcaLabel.Name = "marcaLabel";
-            marcaLabel.Size = new System.Drawing.Size(56, 18);
+            marcaLabel.Size = new System.Drawing.Size(84, 27);
             marcaLabel.TabIndex = 6;
             marcaLabel.Text = "Marca:";
             // 
@@ -112,10 +112,9 @@ namespace Cadastro
             // 
             tamanhoLabel.AutoSize = true;
             tamanhoLabel.Font = new System.Drawing.Font("Arial", 12F);
-            tamanhoLabel.Location = new System.Drawing.Point(10, 70);
-            tamanhoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            tamanhoLabel.Location = new System.Drawing.Point(15, 108);
             tamanhoLabel.Name = "tamanhoLabel";
-            tamanhoLabel.Size = new System.Drawing.Size(75, 18);
+            tamanhoLabel.Size = new System.Drawing.Size(117, 27);
             tamanhoLabel.TabIndex = 8;
             tamanhoLabel.Text = "Tamanho:";
             // 
@@ -123,10 +122,9 @@ namespace Cadastro
             // 
             corLabel.AutoSize = true;
             corLabel.Font = new System.Drawing.Font("Arial", 12F);
-            corLabel.Location = new System.Drawing.Point(10, 90);
-            corLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            corLabel.Location = new System.Drawing.Point(15, 138);
             corLabel.Name = "corLabel";
-            corLabel.Size = new System.Drawing.Size(38, 18);
+            corLabel.Size = new System.Drawing.Size(57, 27);
             corLabel.TabIndex = 10;
             corLabel.Text = "Cor:";
             // 
@@ -134,10 +132,9 @@ namespace Cadastro
             // 
             materialLabel.AutoSize = true;
             materialLabel.Font = new System.Drawing.Font("Arial", 12F);
-            materialLabel.Location = new System.Drawing.Point(-101, 141);
-            materialLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            materialLabel.Location = new System.Drawing.Point(-152, 217);
             materialLabel.Name = "materialLabel";
-            materialLabel.Size = new System.Drawing.Size(68, 18);
+            materialLabel.Size = new System.Drawing.Size(103, 27);
             materialLabel.TabIndex = 12;
             materialLabel.Text = "Material:";
             // 
@@ -145,10 +142,9 @@ namespace Cadastro
             // 
             preçoLabel.AutoSize = true;
             preçoLabel.Font = new System.Drawing.Font("Arial", 12F);
-            preçoLabel.Location = new System.Drawing.Point(10, 132);
-            preçoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            preçoLabel.Location = new System.Drawing.Point(15, 203);
             preçoLabel.Name = "preçoLabel";
-            preçoLabel.Size = new System.Drawing.Size(54, 18);
+            preçoLabel.Size = new System.Drawing.Size(81, 27);
             preçoLabel.TabIndex = 14;
             preçoLabel.Text = "Preço:";
             // 
@@ -156,10 +152,9 @@ namespace Cadastro
             // 
             data_LançamentoLabel.AutoSize = true;
             data_LançamentoLabel.Font = new System.Drawing.Font("Arial", 12F);
-            data_LançamentoLabel.Location = new System.Drawing.Point(10, 153);
-            data_LançamentoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            data_LançamentoLabel.Location = new System.Drawing.Point(15, 235);
             data_LançamentoLabel.Name = "data_LançamentoLabel";
-            data_LançamentoLabel.Size = new System.Drawing.Size(136, 18);
+            data_LançamentoLabel.Size = new System.Drawing.Size(208, 27);
             data_LançamentoLabel.TabIndex = 16;
             data_LançamentoLabel.Text = "Data Lançamento:";
             // 
@@ -209,8 +204,9 @@ namespace Cadastro
             this.roupasBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.roupasBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.roupasBindingNavigator.Name = "roupasBindingNavigator";
+            this.roupasBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.roupasBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.roupasBindingNavigator.Size = new System.Drawing.Size(872, 31);
+            this.roupasBindingNavigator.Size = new System.Drawing.Size(1570, 46);
             this.roupasBindingNavigator.TabIndex = 0;
             this.roupasBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -220,13 +216,13 @@ namespace Cadastro
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 41);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(57, 28);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
@@ -236,7 +232,7 @@ namespace Cadastro
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // bindingNavigatorMoveFirstItem
@@ -245,7 +241,7 @@ namespace Cadastro
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
             // 
             // bindingNavigatorMovePreviousItem
@@ -254,27 +250,27 @@ namespace Cadastro
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posição";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(35, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 31);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -282,7 +278,7 @@ namespace Cadastro
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
             // 
             // bindingNavigatorMoveLastItem
@@ -291,20 +287,20 @@ namespace Cadastro
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
             // roupasBindingNavigatorSaveItem
             // 
             this.roupasBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.roupasBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("roupasBindingNavigatorSaveItem.Image")));
             this.roupasBindingNavigatorSaveItem.Name = "roupasBindingNavigatorSaveItem";
-            this.roupasBindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
+            this.roupasBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 28);
             this.roupasBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.roupasBindingNavigatorSaveItem.Click += new System.EventHandler(this.roupasBindingNavigatorSaveItem_Click);
             // 
@@ -322,12 +318,11 @@ namespace Cadastro
             this.preçoDataGridViewTextBoxColumn,
             this.dataLançamentoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.roupasBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 207);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 318);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(851, 190);
+            this.dataGridView1.Size = new System.Drawing.Size(1276, 292);
             this.dataGridView1.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn
@@ -399,60 +394,54 @@ namespace Cadastro
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Nome", true));
             this.nomeTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.nomeTextBox.Location = new System.Drawing.Point(153, 23);
-            this.nomeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nomeTextBox.Location = new System.Drawing.Point(230, 35);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(135, 26);
+            this.nomeTextBox.Size = new System.Drawing.Size(200, 35);
             this.nomeTextBox.TabIndex = 5;
             // 
             // marcaTextBox
             // 
             this.marcaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Marca", true));
             this.marcaTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.marcaTextBox.Location = new System.Drawing.Point(153, 44);
-            this.marcaTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.marcaTextBox.Location = new System.Drawing.Point(230, 68);
             this.marcaTextBox.Name = "marcaTextBox";
-            this.marcaTextBox.Size = new System.Drawing.Size(135, 26);
+            this.marcaTextBox.Size = new System.Drawing.Size(200, 35);
             this.marcaTextBox.TabIndex = 7;
             // 
             // tamanhoTextBox
             // 
             this.tamanhoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Tamanho", true));
             this.tamanhoTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.tamanhoTextBox.Location = new System.Drawing.Point(153, 65);
-            this.tamanhoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tamanhoTextBox.Location = new System.Drawing.Point(689, 213);
             this.tamanhoTextBox.Name = "tamanhoTextBox";
-            this.tamanhoTextBox.Size = new System.Drawing.Size(135, 26);
+            this.tamanhoTextBox.Size = new System.Drawing.Size(200, 35);
             this.tamanhoTextBox.TabIndex = 9;
             // 
             // corTextBox
             // 
             this.corTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Cor", true));
             this.corTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.corTextBox.Location = new System.Drawing.Point(153, 86);
-            this.corTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.corTextBox.Location = new System.Drawing.Point(230, 130);
             this.corTextBox.Name = "corTextBox";
-            this.corTextBox.Size = new System.Drawing.Size(135, 26);
+            this.corTextBox.Size = new System.Drawing.Size(200, 35);
             this.corTextBox.TabIndex = 11;
             // 
             // materialTextBox
             // 
             this.materialTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Material", true));
             this.materialTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.materialTextBox.Location = new System.Drawing.Point(153, 107);
-            this.materialTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialTextBox.Location = new System.Drawing.Point(230, 165);
             this.materialTextBox.Name = "materialTextBox";
-            this.materialTextBox.Size = new System.Drawing.Size(135, 26);
+            this.materialTextBox.Size = new System.Drawing.Size(200, 35);
             this.materialTextBox.TabIndex = 13;
             // 
             // preçoTextBox
             // 
             this.preçoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roupasBindingSource, "Preço", true));
             this.preçoTextBox.Font = new System.Drawing.Font("Arial", 12F);
-            this.preçoTextBox.Location = new System.Drawing.Point(153, 127);
-            this.preçoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.preçoTextBox.Location = new System.Drawing.Point(230, 195);
             this.preçoTextBox.Name = "preçoTextBox";
-            this.preçoTextBox.Size = new System.Drawing.Size(135, 26);
+            this.preçoTextBox.Size = new System.Drawing.Size(200, 35);
             this.preçoTextBox.TabIndex = 15;
             // 
             // data_LançamentoDateTimePicker
@@ -460,30 +449,42 @@ namespace Cadastro
             this.data_LançamentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.roupasBindingSource, "Data_Lançamento", true));
             this.data_LançamentoDateTimePicker.Font = new System.Drawing.Font("Arial", 12F);
             this.data_LançamentoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.data_LançamentoDateTimePicker.Location = new System.Drawing.Point(153, 148);
-            this.data_LançamentoDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.data_LançamentoDateTimePicker.Location = new System.Drawing.Point(230, 228);
             this.data_LançamentoDateTimePicker.Name = "data_LançamentoDateTimePicker";
-            this.data_LançamentoDateTimePicker.Size = new System.Drawing.Size(135, 26);
+            this.data_LançamentoDateTimePicker.Size = new System.Drawing.Size(200, 35);
             this.data_LançamentoDateTimePicker.TabIndex = 17;
             // 
             // comboBox1
             // 
             this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.roupasBindingSource, "Tamanho", true));
-            this.comboBox1.DataSource = this.roupasBindingSource;
-            this.comboBox1.DisplayMember = "Tamanho";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(365, 77);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Items.AddRange(new object[] {
+            "PP",
+            "P",
+            "M",
+            "G",
+            "GG"});
+            this.comboBox1.Location = new System.Drawing.Point(230, 107);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(82, 21);
+            this.comboBox1.Size = new System.Drawing.Size(200, 28);
             this.comboBox1.TabIndex = 18;
-            this.comboBox1.ValueMember = "Tamanho";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Arial", 12F);
+            label1.Location = new System.Drawing.Point(15, 168);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(103, 27);
+            label1.TabIndex = 19;
+            label1.Text = "Material:";
             // 
             // frmForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 409);
+            this.ClientSize = new System.Drawing.Size(1308, 629);
+            this.Controls.Add(label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(nomeLabel);
             this.Controls.Add(this.nomeTextBox);
@@ -501,7 +502,6 @@ namespace Cadastro
             this.Controls.Add(this.data_LançamentoDateTimePicker);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.roupasBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmForm";
             this.Text = "Casdastro de Roupas";
             this.Load += new System.EventHandler(this.Form1_Load);

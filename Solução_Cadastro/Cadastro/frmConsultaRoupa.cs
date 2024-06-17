@@ -28,11 +28,12 @@ namespace Cadastro
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            string coluna, procurar, texto, filtro = "";
+            string coluna, procurar, texto, texto2, filtro = "";
 
             coluna = cmbColuna.Text;
             procurar = cmbProcurar.Text;
             texto = txtPesquisa1.Text;
+            texto2 = txtPesquisa2.Text;
 
             filtro = coluna;
 
@@ -72,8 +73,11 @@ namespace Cadastro
             }
             else if (procurar == "Entre")
             {
-                filtro += " like '%/ " + texto + "'";
+                filtro += " >= '" + texto + "' AND " + " <= '" + texto2 + "'";
             }
+
+            roupasBindingSource.Filter = filtro;
+
         }
 
         private void cmbColuna_SelectedIndexChanged(object sender, EventArgs e)
@@ -104,6 +108,7 @@ namespace Cadastro
                 cmbProcurar.Items.Add("Começa com");
                 cmbProcurar.Items.Add("Termina com");
                 cmbProcurar.Items.Add("Contém");
+                cmbProcurar.Items.Add("Entre");
                 cmbProcurar.Items.Add("Igual a");
             }
             else if (cmbColuna.Text == "Data de Lançamento")

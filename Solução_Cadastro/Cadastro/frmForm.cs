@@ -64,5 +64,18 @@ namespace Cadastro
             this.tableAdapterManager.UpdateAll(this.dataSetRoupa);
 
         }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.roupasTableAdapter.Fill(this.dataSetRoupa.Roupas);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
