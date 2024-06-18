@@ -64,7 +64,7 @@ namespace Cadastro
             this.btnConsulta});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 33);
+            this.toolStrip1.Size = new System.Drawing.Size(533, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -74,7 +74,7 @@ namespace Cadastro
             this.novoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("novoToolStripButton.Image")));
             this.novoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.novoToolStripButton.Name = "novoToolStripButton";
-            this.novoToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.novoToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.novoToolStripButton.Text = "&Novo";
             // 
             // abrirToolStripButton
@@ -83,7 +83,7 @@ namespace Cadastro
             this.abrirToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("abrirToolStripButton.Image")));
             this.abrirToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.abrirToolStripButton.Name = "abrirToolStripButton";
-            this.abrirToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.abrirToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.abrirToolStripButton.Text = "&Abrir";
             // 
             // salvarToolStripButton
@@ -92,7 +92,7 @@ namespace Cadastro
             this.salvarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("salvarToolStripButton.Image")));
             this.salvarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.salvarToolStripButton.Name = "salvarToolStripButton";
-            this.salvarToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.salvarToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.salvarToolStripButton.Text = "&Salvar";
             // 
             // imprimirToolStripButton
@@ -101,13 +101,13 @@ namespace Cadastro
             this.imprimirToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("imprimirToolStripButton.Image")));
             this.imprimirToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.imprimirToolStripButton.Name = "imprimirToolStripButton";
-            this.imprimirToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.imprimirToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.imprimirToolStripButton.Text = "&Imprimir";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 33);
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // recortarToolStripButton
             // 
@@ -115,7 +115,7 @@ namespace Cadastro
             this.recortarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("recortarToolStripButton.Image")));
             this.recortarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.recortarToolStripButton.Name = "recortarToolStripButton";
-            this.recortarToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.recortarToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.recortarToolStripButton.Text = "Recor&tar";
             // 
             // copiarToolStripButton
@@ -124,7 +124,7 @@ namespace Cadastro
             this.copiarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copiarToolStripButton.Image")));
             this.copiarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copiarToolStripButton.Name = "copiarToolStripButton";
-            this.copiarToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.copiarToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.copiarToolStripButton.Text = "&Copiar";
             // 
             // colarToolStripButton
@@ -133,13 +133,13 @@ namespace Cadastro
             this.colarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("colarToolStripButton.Image")));
             this.colarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.colarToolStripButton.Name = "colarToolStripButton";
-            this.colarToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.colarToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.colarToolStripButton.Text = "C&olar";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // ajudaToolStripButton
             // 
@@ -147,7 +147,7 @@ namespace Cadastro
             this.ajudaToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("ajudaToolStripButton.Image")));
             this.ajudaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ajudaToolStripButton.Name = "ajudaToolStripButton";
-            this.ajudaToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.ajudaToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.ajudaToolStripButton.Text = "&Ajuda";
             // 
             // btnCadastro
@@ -156,8 +156,8 @@ namespace Cadastro
             this.btnCadastro.Image = global::Cadastro.Properties.Resources.form;
             this.btnCadastro.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCadastro.Name = "btnCadastro";
-            this.btnCadastro.Size = new System.Drawing.Size(34, 28);
-            this.btnCadastro.Text = "Cadastro de Pessoas";
+            this.btnCadastro.Size = new System.Drawing.Size(28, 28);
+            this.btnCadastro.Text = "Cadastro de Series";
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
             // btnConsulta
@@ -166,18 +166,19 @@ namespace Cadastro
             this.btnConsulta.Image = global::Cadastro.Properties.Resources.table;
             this.btnConsulta.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(34, 28);
-            this.btnConsulta.Text = "Consulta de Pessoas";
+            this.btnConsulta.Size = new System.Drawing.Size(28, 28);
+            this.btnConsulta.Text = "Consulta de Series";
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMenu";
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

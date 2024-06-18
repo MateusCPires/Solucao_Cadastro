@@ -49,21 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSetRoupa.Designer.cs">
+    <Compile Include="DataSetSeries.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetRoupa.xsd</DependentUpon>
+      <DependentUpon>DataSetSeries.xsd</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaRoupa.cs">
+    <Compile Include="frmConsultaSerie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaRoupa.Designer.cs">
-      <DependentUpon>frmConsultaRoupa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <Compile Include="frmConsultaSerie.Designer.cs">
+      <DependentUpon>frmConsultaSerie.cs</DependentUpon>
     </Compile>
     <Compile Include="frmForm.cs">
       <SubType>Form</SubType>
@@ -79,8 +74,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmConsultaRoupa.resx">
-      <DependentUpon>frmConsultaRoupa.cs</DependentUpon>
+    <EmbeddedResource Include="frmConsultaSerie.resx">
+      <DependentUpon>frmConsultaSerie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmForm.resx">
       <DependentUpon>frmForm.cs</DependentUpon>
@@ -98,27 +93,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="DataSetSeries.xsc">
+      <DependentUpon>DataSetSeries.xsd</DependentUpon>
     </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
+    <None Include="DataSetSeries.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetRoupa.xsc">
-      <DependentUpon>DataSetRoupa.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetRoupa.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetRoupa.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetSeries.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSetRoupa.xss">
-      <DependentUpon>DataSetRoupa.xsd</DependentUpon>
+    <None Include="DataSetSeries.xss">
+      <DependentUpon>DataSetSeries.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

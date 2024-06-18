@@ -27,7 +27,7 @@ namespace Cadastro
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-            frmConsultaRoupa objConsultaPessoa = new frmConsultaRoupa();
+            frmConsultaSerie objConsultaPessoa = new frmConsultaSerie();
             objConsultaPessoa.MdiParent = this;
             objConsultaPessoa.Show();
         }
